@@ -50,7 +50,7 @@ export default function UserForm({ onSubmit, isLoading }) {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
             placeholder="John Doe"
           />
         </div>
@@ -69,7 +69,7 @@ export default function UserForm({ onSubmit, isLoading }) {
             required
             min="13"
             max="100"
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
             placeholder="25"
           />
         </div>
@@ -84,7 +84,7 @@ export default function UserForm({ onSubmit, isLoading }) {
             name="gender"
             value={formData.gender}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           >
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -106,7 +106,7 @@ export default function UserForm({ onSubmit, isLoading }) {
             required
             min="100"
             max="250"
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
             placeholder="170"
           />
         </div>
@@ -125,7 +125,7 @@ export default function UserForm({ onSubmit, isLoading }) {
             required
             min="30"
             max="300"
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
             placeholder="70"
           />
         </div>
@@ -140,7 +140,7 @@ export default function UserForm({ onSubmit, isLoading }) {
             name="goal"
             value={formData.goal}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           >
             <option value="weight-loss">Weight Loss</option>
             <option value="muscle-gain">Muscle Gain</option>
@@ -161,7 +161,7 @@ export default function UserForm({ onSubmit, isLoading }) {
             name="fitnessLevel"
             value={formData.fitnessLevel}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           >
             <option value="beginner">Beginner</option>
             <option value="intermediate">Intermediate</option>
@@ -179,7 +179,7 @@ export default function UserForm({ onSubmit, isLoading }) {
             name="location"
             value={formData.location}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           >
             <option value="gym">Gym</option>
             <option value="home">Home</option>
@@ -197,7 +197,7 @@ export default function UserForm({ onSubmit, isLoading }) {
             name="diet"
             value={formData.diet}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           >
             <option value="veg">Vegetarian</option>
             <option value="non-veg">Non-Vegetarian</option>
@@ -217,7 +217,7 @@ export default function UserForm({ onSubmit, isLoading }) {
             name="stressLevel"
             value={formData.stressLevel}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           >
             <option value="low">Low</option>
             <option value="moderate">Moderate</option>
@@ -237,7 +237,7 @@ export default function UserForm({ onSubmit, isLoading }) {
           value={formData.medicalHistory}
           onChange={handleChange}
           rows="3"
-          className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
           placeholder="Any injuries, health conditions, or medications..."
         />
       </div>

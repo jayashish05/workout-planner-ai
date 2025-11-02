@@ -7,11 +7,17 @@ import useStore from '@/store/useStore';
 export default function ThemeToggle() {
   const { darkMode, toggleDarkMode } = useStore();
 
+  const handleClick = () => {
+    console.log('Toggle clicked! Current darkMode:', darkMode);
+    toggleDarkMode();
+    console.log('After toggle, darkMode should be:', !darkMode);
+  };
+
   return (
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      onClick={toggleDarkMode}
+      onClick={handleClick}
       className="fixed top-6 right-6 z-50 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg border-2 border-gray-200 dark:border-gray-700"
       aria-label="Toggle theme"
     >

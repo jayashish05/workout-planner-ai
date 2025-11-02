@@ -12,6 +12,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const store = localStorage.getItem('fitness-coach-storage');
+                if (store) {
+                  const { state } = JSON.parse(store);
+                  if (state?.darkMode) {
+                    document.documentElement.classList.add('dark');
+                  }
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
       <body className={inter.className} suppressHydrationWarning>
         {children}
       </body>

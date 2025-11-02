@@ -449,14 +449,24 @@ function MotivationTab({ motivation }) {
 function ExerciseCard({ exercise }) {
   const [showImage, setShowImage] = useState(false);
   const [imageUrl, setImageUrl] = useState('');
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const handleImageClick = async () => {
     if (!showImage) {
-      const url = await generateExerciseImage(exercise.name);
-      setImageUrl(url);
+      setIsGenerating(true);
       setShowImage(true);
+      try {
+        const url = await generateExerciseImage(exercise.name);
+        setImageUrl(url);
+      } catch (error) {
+        console.error('Failed to generate image:', error);
+        setShowImage(false);
+      } finally {
+        setIsGenerating(false);
+      }
     } else {
       setShowImage(false);
+      setImageUrl('');
     }
   };
 
@@ -475,21 +485,28 @@ function ExerciseCard({ exercise }) {
         </button>
       </div>
       
-      {showImage && imageUrl && (
+      {showImage && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 400 }}
           exit={{ opacity: 0, height: 0 }}
           className="mb-3 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center h-[400px]"
         >
-          <img
-            src={imageUrl}
-            alt={exercise.name}
-            className="max-w-full max-h-full object-contain rounded-lg"
-            onError={(e) => {
-              e.target.src = `https://source.unsplash.com/800x600/?fitness,exercise`;
-            }}
-          />
+          {isGenerating ? (
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">Generating image...</p>
+            </div>
+          ) : imageUrl ? (
+            <img
+              src={imageUrl}
+              alt={exercise.name}
+              className="max-w-full max-h-full object-contain rounded-lg"
+              onError={(e) => {
+                e.target.src = `https://source.unsplash.com/800x600/?fitness,exercise`;
+              }}
+            />
+          ) : null}
         </motion.div>
       )}
       
@@ -508,15 +525,25 @@ function ExerciseCard({ exercise }) {
 function MealCard({ mealName, meal, index }) {
   const [showImage, setShowImage] = useState(false);
   const [imageUrl, setImageUrl] = useState('');
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const handleImageClick = async () => {
     if (!showImage) {
-      const mealDescription = meal.items.join(', ');
-      const url = await generateExerciseImage(mealDescription);
-      setImageUrl(url);
+      setIsGenerating(true);
       setShowImage(true);
+      try {
+        const mealDescription = meal.items.join(', ');
+        const url = await generateExerciseImage(mealDescription);
+        setImageUrl(url);
+      } catch (error) {
+        console.error('Failed to generate image:', error);
+        setShowImage(false);
+      } finally {
+        setIsGenerating(false);
+      }
     } else {
       setShowImage(false);
+      setImageUrl('');
     }
   };
 
@@ -543,21 +570,28 @@ function MealCard({ mealName, meal, index }) {
         </div>
       </div>
       
-      {showImage && imageUrl && (
+      {showImage && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 400 }}
           exit={{ opacity: 0, height: 0 }}
           className="mb-3 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center h-[400px]"
         >
-          <img
-            src={imageUrl}
-            alt={mealName}
-            className="max-w-full max-h-full object-contain rounded-lg"
-            onError={(e) => {
-              e.target.src = `https://source.unsplash.com/800x600/?food,meal`;
-            }}
-          />
+          {isGenerating ? (
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-12 h-12 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">Generating image...</p>
+            </div>
+          ) : imageUrl ? (
+            <img
+              src={imageUrl}
+              alt={mealName}
+              className="max-w-full max-h-full object-contain rounded-lg"
+              onError={(e) => {
+                e.target.src = `https://source.unsplash.com/800x600/?food,meal`;
+              }}
+            />
+          ) : null}
         </motion.div>
       )}
       

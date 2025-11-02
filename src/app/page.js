@@ -20,12 +20,16 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [showSavedPlans, setShowSavedPlans] = useState(false);
 
-  // Apply dark mode class to document
+  // Apply dark mode class to document immediately
   useEffect(() => {
+    console.log('Dark mode changed:', darkMode);
+    const html = document.documentElement;
     if (darkMode) {
-      document.documentElement.classList.add('dark');
+      html.classList.add('dark');
+      console.log('Added dark class');
     } else {
-      document.documentElement.classList.remove('dark');
+      html.classList.remove('dark');
+      console.log('Removed dark class');
     }
   }, [darkMode]);
 
