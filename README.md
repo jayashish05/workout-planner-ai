@@ -29,9 +29,10 @@
   - 100% AI-generated content - no hardcoded templates
 
 - **🔊 Voice Features**
-  - Text-to-Speech for workout plans
-  - Text-to-Speech for diet plans
-  - Browser-native speech synthesis
+  - Text-to-Speech for workout plans using ElevenLabs
+  - Text-to-Speech for diet plans using ElevenLabs
+  - High-quality AI voice narration
+  - Professional voice synthesis
 
 - **�️ AI Image Generation**
   - Exercise demonstration images via Hugging Face Stable Diffusion
@@ -58,12 +59,13 @@
 
 1. **Smart BMI Dashboard** - Visual health metrics with color-coded indicators
 2. **Daily Motivation Engine** - AI-generated fresh quotes daily
-3. **Plan Regeneration** - Don't like your plan? Regenerate instantly
-4. **History Management** - Track and compare multiple fitness plans
-5. **Interactive Exercise Cards** - Collapsible day-by-day workout schedules
-6. **AI Image Generation** - Visual exercise and meal demonstrations
-7. **Macro Nutrition Tracking** - Visual breakdown of protein, carbs, and fats
-8. **Progressive Disclosure UI** - Clean, uncluttered interface
+3. **Premium Voice Features** - High-quality ElevenLabs text-to-speech narration
+4. **AI Image Generation** - Hugging Face Stable Diffusion for exercise/meal visuals
+5. **Plan Regeneration** - Don't like your plan? Regenerate instantly
+6. **History Management** - Track and compare multiple fitness plans
+7. **Interactive Exercise Cards** - Collapsible day-by-day workout schedules
+8. **Macro Nutrition Tracking** - Visual breakdown of protein, carbs, and fats
+9. **Progressive Disclosure UI** - Clean, uncluttered interface
 
 ## 🛠️ Tech Stack
 
@@ -79,7 +81,7 @@
 | **State Management** | Zustand with persistence |
 | **PDF Export** | jsPDF + html2canvas |
 | **Notifications** | React Hot Toast |
-| **Voice** | Web Speech API |
+| **Voice** | ElevenLabs API |
 
 ## 📦 Installation & Setup
 
@@ -88,6 +90,7 @@
 - Node.js 18+ installed
 - Google Gemini API key ([Get it here](https://aistudio.google.com/app/apikey))
 - Hugging Face API token ([Get it here](https://huggingface.co/settings/tokens))
+- ElevenLabs API key ([Get it here](https://elevenlabs.io/))
 
 ### Quick Start
 
@@ -108,6 +111,7 @@
    ```env
    NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
    NEXT_PUBLIC_HUGGINGFACE_API_KEY=your_huggingface_token_here
+   NEXT_PUBLIC_ELEVENLABS_API_KEY=your_elevenlabs_api_key_here
    ```
 
 4. **Run the development server:**
@@ -129,6 +133,7 @@
 4. Add environment variables:
    - `NEXT_PUBLIC_GEMINI_API_KEY`
    - `NEXT_PUBLIC_HUGGINGFACE_API_KEY`
+   - `NEXT_PUBLIC_ELEVENLABS_API_KEY`
 5. Click Deploy!
 
 ### Deploy to Render
@@ -143,6 +148,7 @@
 6. Add environment variables:
    - `NEXT_PUBLIC_GEMINI_API_KEY`
    - `NEXT_PUBLIC_HUGGINGFACE_API_KEY`
+   - `NEXT_PUBLIC_ELEVENLABS_API_KEY`
 7. Click **Create Web Service**
 
 ### Deploy to Netlify
@@ -270,9 +276,11 @@ speakText(formatPlanForSpeech(plan, 'workout'));
 - Check browser console for specific errors
 
 ### Issue: Voice not working
-- **Solution**: Use Chrome/Edge/Safari (best support)
-- Grant microphone permissions if prompted
+- **Solution**: Check your ElevenLabs API key in `.env.local`
+- Ensure you have API credits available
+- Verify audio playback permissions in browser
 - Check browser console for errors
+- ElevenLabs free tier has usage limits
 
 ### Issue: PDF export not working
 - **Solution**: Ensure popup blockers are disabled
@@ -318,9 +326,9 @@ Built with ❤️ as an internship assignment submission
 
 ### Features Implemented
 ✅ All 13+ required features  
-✅ AI-powered fitness & diet plans  
-✅ Voice features (Text-to-Speech)  
-✅ Image generation (Hugging Face AI)  
+✅ AI-powered fitness & diet plans (Gemini 2.0 Flash)  
+✅ Voice features (ElevenLabs TTS)  
+✅ Image generation (Hugging Face Stable Diffusion)  
 ✅ PDF export  
 ✅ Dark mode  
 ✅ Responsive design  
