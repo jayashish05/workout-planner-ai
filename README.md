@@ -123,42 +123,6 @@
    
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 🚀 Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Import your repository
-4. Add environment variables:
-   - `NEXT_PUBLIC_GEMINI_API_KEY`
-   - `NEXT_PUBLIC_HUGGINGFACE_API_KEY`
-   - `NEXT_PUBLIC_ELEVENLABS_API_KEY`
-5. Click Deploy!
-
-### Deploy to Render
-
-1. Push your code to GitHub
-2. Go to [render.com](https://render.com)
-3. Create a new **Web Service**
-4. Connect your repository
-5. Configure:
-   - **Build Command:** `npm install && npm run build`
-   - **Start Command:** `npm start`
-6. Add environment variables:
-   - `NEXT_PUBLIC_GEMINI_API_KEY`
-   - `NEXT_PUBLIC_HUGGINGFACE_API_KEY`
-   - `NEXT_PUBLIC_ELEVENLABS_API_KEY`
-7. Click **Create Web Service**
-
-### Deploy to Netlify
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-2. Deploy the `.next` folder to Netlify
-3. Configure environment variables in Netlify dashboard
 
 ## 📖 Usage Guide
 
@@ -307,19 +271,6 @@ This is a showcase project, but suggestions are welcome!
 
 This project is open source and available for educational purposes.
 
-## 🎯 Deployment Checklist
-
-Before deploying to production:
-
-- [ ] All environment variables configured
-- [ ] Test build locally: `npm run build`
-- [ ] Test production mode: `npm start`
-- [ ] Verify API keys are working
-- [ ] Test all features (form, AI generation, PDF export, images, voice)
-- [ ] Check responsive design on mobile
-- [ ] Test dark/light mode
-- [ ] Verify error handling
-
 ## 👨‍💻 Developer
 
 Built with ❤️ as an internship assignment submission
@@ -349,7 +300,7 @@ Built with ❤️ as an internship assignment submission
 
 ## 📹 Demo
 
-🔗 **Live Demo:** [Add your deployed URL here]
+🔗 **Live Demo:** https://workout-planner-ai.onrender.com
 
 ## 🏆 Project Highlights
 
